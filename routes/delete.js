@@ -14,16 +14,14 @@ var db = mysql.createConnection({
 router.get('/', function(req, res, next) {
     var id = req.query.id;
     console.log(id);
-    /*db.query(`delete from invitations where id='${id}'`,(err, res) => {
+    var deleteId = `delete from invitations where id='${id}'`
+    db.query(deleteId,(err, res) => {
         if (err) {
-            res.json(err)
+            console.log(err)
         } else {
-            let dataAfter = {
-                "result": "success"
-            }
-            res.json(dataAfter)
+            console.log('success')
         }
-    })*/
+    })
 
 });
 // db.query("delete from invitations where id=")
